@@ -41,6 +41,17 @@
 		</dependency>
 	</dependencies>
 
+	<modules>
+		<module>sti-project-javaB-domain</module>
+		<module>sti-project-javaB-service</module>
+		<module>sti-project-javaB-service-impl</module>
+		<module>sti-project-javaB-dao</module>
+		<module>sti-project-javaB-unittest</module>
+
+
+
+	</modules>
+
 	<build>
 		<plugins>
 			<plugin>
