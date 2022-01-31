@@ -8,6 +8,7 @@
 		<version>2.6.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	<packaging>pom</packaging>
 	<groupId>se.sti</groupId>
 	<artifactId>sti-project-javaB</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
