@@ -45,6 +45,11 @@ public class StudentService {
 
     }
 
+    public Student deleteStudent(String personNumber){
+        Student deletestudent = studentRepo.findByPersonNumber(personNumber);
+        return deletestudent;
+    }
+
 
 
 }

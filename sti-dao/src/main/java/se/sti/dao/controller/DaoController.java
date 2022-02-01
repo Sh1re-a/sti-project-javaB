@@ -32,11 +32,18 @@ public class DaoController {
         return "saved";
     }
     @PutMapping(value = "/update/{personNumber}")
-    public String updateStudent(String personNumber,Student student){
+    public String updateStudent(@PathVariable String personNumber, @RequestBody Student student){
         StudentService x = new StudentService();
         Student updateStudent = x.updateStudent(personNumber, student);
         studentRepo.save(updateStudent);
         return "Student is updated";
+    }
+
+    public String deleteStudent(@PathVariable String personNumber){
+        StudentService x = new StudentService();
+        Student deleteStudent = x.deleteStudent();
+        studentRepo.delete(deleteStudent);
+        return"Student is deleted!";
     }
 
 
