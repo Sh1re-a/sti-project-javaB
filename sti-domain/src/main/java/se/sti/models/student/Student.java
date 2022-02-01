@@ -1,21 +1,50 @@
 package se.sti.models.student;
 
-import se.sti.models.Person;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity @Table(name = "Student")
-public class Student extends Person {
+public class Student  {
 
+    @Id
+    private String personNumber;
     @Column
-     private int course;
+    private String firstName;
     @Column
-     private final boolean haveComputer = true;
+    private String lastName;
+    @Column
+    private int course;
+    @Column
+    private final boolean haveComputer = true;
 
 
+    public String getPersonNumber() {
+        return personNumber;
+    }
 
+    public void setPersonNumber(String personNumber) {
+        this.personNumber = personNumber;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     public int getCourse() {
         return course;
@@ -28,6 +57,4 @@ public class Student extends Person {
     public boolean isHaveComputer() {
         return haveComputer;
     }
-
-
 }

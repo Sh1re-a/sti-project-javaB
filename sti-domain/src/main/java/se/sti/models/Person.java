@@ -1,7 +1,11 @@
+
+// TODO: Lära mig lite mer om abstrakta klasser med Spring Annotionens
+
+
+/*
+
 package se.sti.models;
-
 import javax.persistence.*;
-
 @MappedSuperclass
 public abstract class Person {
     @Id
@@ -52,3 +56,4 @@ public abstract class Person {
 
 
 }
+*/

@@ -16,8 +16,8 @@ public class Course {
     private String yhPoints;
     @Column
     private int totalHours;
-    @Column
-    private Teacher teacher;
+
+    //private Teacher teacher;
 
     public String getCourseName() {
         return courseName;
@@ -51,11 +51,13 @@ public class Course {
         this.totalHours = totalHours;
     }
 
-    public Teacher getTeacher() {
+  /*  public Teacher getTeacher() {
         return teacher;
     }
 
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
+
+   */
 }
