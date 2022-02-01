@@ -1,10 +1,9 @@
-package se.sti.model.student;
+package se.sti.models.student;
 
-import se.sti.model.Person;
+import se.sti.models.Person;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity @Table(name = "Student")
@@ -30,8 +29,5 @@ public class Student extends Person {
         return haveComputer;
     }
 
-    @Override
-    public Student createStudent(Object Student) {
-        return null;
-    }
+
 }

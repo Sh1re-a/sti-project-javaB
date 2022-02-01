@@ -1,12 +1,22 @@
-package se.sti.model.course;
+package se.sti.models.course;
 
-import se.sti.model.teacher.Teacher;
+import se.sti.models.teacher.Teacher;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Course {
-    private String courseName;
-    private int yhPoints;
+    @Id
     private String courseCode;
+    @Column
+    private String courseName;
+    @Column
+    private String yhPoints;
+    @Column
     private int totalHours;
+    @Column
     private Teacher teacher;
 
     public String getCourseName() {
@@ -17,11 +27,11 @@ public class Course {
         this.courseName = courseName;
     }
 
-    public int getYhPoints() {
+    public String getYhPoints() {
         return yhPoints;
     }
 
-    public void setYhPoints(int yhPoints) {
+    public void setYhPoints(String yhPoints) {
         this.yhPoints = yhPoints;
     }
 

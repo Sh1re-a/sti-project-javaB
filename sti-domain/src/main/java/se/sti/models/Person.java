@@ -1,6 +1,4 @@
-package se.sti.model;
-
-import se.sti.model.student.Student;
+package se.sti.models;
 
 import javax.persistence.*;
 

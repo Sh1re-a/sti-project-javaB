@@ -1,8 +1,7 @@
-package se.sti.model.teacher;
+package se.sti.models.teacher;
 
-import se.sti.model.Person;
-import se.sti.model.course.Course;
-import se.sti.model.student.Student;
+import se.sti.models.Person;
+import se.sti.models.course.Course;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +11,7 @@ import java.util.List;
 @Entity
 public class Teacher extends Person {
 
-
+    @Column
     private List<Course>courses;
     @Column
     private int hourlyRate;
