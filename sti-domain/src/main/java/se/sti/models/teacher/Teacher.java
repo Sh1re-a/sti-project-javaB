@@ -6,6 +6,7 @@ import se.sti.models.course.Course;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.util.List;
 
 
@@ -19,8 +20,8 @@ public class Teacher {
     @Column
     private String lastName;
 
-
-    //private List<Course>courses;
+    @Transient
+    private List<Course>courses;
 
     @Column
     private int hourlyRate;
@@ -50,7 +51,7 @@ public class Teacher {
     }
 
     //TODO: JPA kan inte läsa av dessa,det är för att de läs in som objekt
-   /* public List<Course> getCourses() {
+   public List<Course> getCourses() {
         return courses;
     }
 
@@ -58,7 +59,7 @@ public class Teacher {
         this.courses = courses;
     }
 
-    */
+
 
     public int getHourlyRate() {
         return hourlyRate;

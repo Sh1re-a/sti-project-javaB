@@ -5,6 +5,7 @@ import se.sti.models.teacher.Teacher;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 @Entity
 public class Course {
@@ -16,8 +17,8 @@ public class Course {
     private String yhPoints;
     @Column
     private int totalHours;
-
-    //private Teacher teacher;
+    @Transient
+    private Teacher teacher;
 
     public String getCourseName() {
         return courseName;
@@ -51,7 +52,7 @@ public class Course {
         this.totalHours = totalHours;
     }
 
-  /*  public Teacher getTeacher() {
+    public Teacher getTeacher() {
         return teacher;
     }
 
@@ -59,5 +60,5 @@ public class Course {
         this.teacher = teacher;
     }
 
-   */
+
 }
