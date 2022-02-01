@@ -10,7 +10,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>sti-project-javaB-service</artifactId>
+    <artifactId>sti-unittest</artifactId>
     <packaging>jar</packaging>
 
 </project>

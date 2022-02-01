@@ -46,14 +46,10 @@
 	</dependencies>
 
 	<modules>
-		<module>sti-project-javaB-domain</module>
-		<module>sti-project-javaB-service</module>
-		<module>sti-project-javaB-service-impl</module>
-		<module>sti-project-javaB-dao</module>
-		<module>sti-project-javaB-unittest</module>
-
-
-
+		<module>sti-domain</module>
+		<module>sti-service</module>
+		<module>sti-dao</module>
+		<module>sti-unittest</module>
 
 	</modules>
 

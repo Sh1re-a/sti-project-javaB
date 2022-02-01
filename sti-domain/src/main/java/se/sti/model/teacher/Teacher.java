@@ -1,16 +1,24 @@
-package Models;
+package se.sti.model.teacher;
 
+import se.sti.model.Person;
+import se.sti.model.course.Course;
+import se.sti.model.student.Student;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import java.util.List;
 
-public class Teacher extends Person{
 
-    private List<Course> courses;
+@Entity
+public class Teacher extends Person {
+
+
+    private List<Course>courses;
+    @Column
     private int hourlyRate;
 
-    public Teacher(List<Course> courses, int hourlyRate) {
-        this.courses = courses;
-        this.hourlyRate = hourlyRate;
-    }
+
+
 
     public List<Course> getCourses() {
         return courses;
@@ -27,4 +35,6 @@ public class Teacher extends Person{
     public void setHourlyRate(int hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
+
+
 }
