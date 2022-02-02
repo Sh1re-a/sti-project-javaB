@@ -1,8 +1,7 @@
 package se.sti.dao.controller.student;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.*;
 import se.sti.models.repo.StudentRepo;
 import se.sti.models.student.Student;
@@ -10,13 +9,16 @@ import se.sti.service.student.StudentService;
 
 import java.util.List;
 
+
 @RestController
 public class StudentController {
 
     @Autowired
     private StudentRepo studentRepo;
 
-    @GetMapping(value = "/")
+
+
+    @GetMapping(value = "/1")
     public String getPage(){
         return "Welcome";
     }

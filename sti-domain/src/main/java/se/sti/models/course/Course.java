@@ -20,7 +20,13 @@ public class Course {
     @Transient
     private Teacher teacher;
 
+    public Course() {
 
+    }
+
+    public Course(int totalHours) {
+        this.totalHours = totalHours;
+    }
 
     public String getCourseName() {
         return courseName;

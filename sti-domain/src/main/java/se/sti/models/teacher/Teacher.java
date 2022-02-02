@@ -1,13 +1,12 @@
 package se.sti.models.teacher;
 
 
-import se.sti.models.course.Course;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Transient;
-import java.util.List;
+
 
 
 @Entity
@@ -20,11 +19,22 @@ public class Teacher {
     @Column
     private String lastName;
 
-    @Transient
-    private List<Course>courses;
+    //Tydligen så stöder inte MySQL arrays ://
+    //Kunde inte få det funka med att hämta fler Kurser när jag skulle räkna
+    //lönerna, så varje lärare får en kurs.
+    @Column
+    private String courses;
 
     @Column
     private int hourlyRate;
+
+    public Teacher(String personNumber, String firstName, String lastName, String courses, int hourlyRate) {
+        this.personNumber = personNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.courses = courses;
+        this.hourlyRate = hourlyRate;
+    }
 
     public String getPersonNumber() {
         return personNumber;
@@ -51,11 +61,13 @@ public class Teacher {
     }
 
     //TODO: JPA kan inte läsa av dessa,det är för att de läs in som objekt
-   public List<Course> getCourses() {
+
+
+    public String getCourses() {
         return courses;
     }
 
-    public void setCourses(List<Course> courses) {
+    public void setCourses(String courses) {
         this.courses = courses;
     }
 
