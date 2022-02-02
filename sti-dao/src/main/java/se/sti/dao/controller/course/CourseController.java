@@ -26,13 +26,16 @@ public class CourseController {
         return "Course is saved...";
     }
 
+/*
     @PutMapping(value = "/course/update/{courseCode}")
-    public String updateCourse(@PathVariable String courseCode, @RequestBody Course course){
+    public String updateCourse(@PathVariable long id, @RequestBody Course course){
         CourseService x = new CourseService();
-        Course updateCourse = x.updateCourse(courseCode, course);
+        Course updateCourse = x.updateCourse(id, course);
         courseRepo.save(updateCourse);
         return "Course is update...";
     }
 
+
+ */
 }
 

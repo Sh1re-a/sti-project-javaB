@@ -3,38 +3,49 @@ package se.sti.models.teacher;
 
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import se.sti.models.repo.TeacherRepo;
 
+import javax.persistence.*;
 
 
 @Entity
 public class Teacher {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column
     private String personNumber;
     @Column
     private String firstName;
     @Column
     private String lastName;
-
-    //Tydligen så stöder inte MySQL arrays ://
-    //Kunde inte få det funka med att hämta fler Kurser när jag skulle räkna
-    //lönerna, så varje lärare får en kurs.
     @Column
-    private String courses;
-
+    private String courseCode;
     @Column
     private int hourlyRate;
 
-    public Teacher(String personNumber, String firstName, String lastName, String courses, int hourlyRate) {
-        this.personNumber = personNumber;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.courses = courses;
-        this.hourlyRate = hourlyRate;
+
+
+    public long getId() {
+        return id;
     }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "personNumber='" + personNumber + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", courses='" + courseCode + '\'' +
+                ", hourlyRate=" + hourlyRate +
+                '}';
+    }
+
 
     public String getPersonNumber() {
         return personNumber;
@@ -63,12 +74,12 @@ public class Teacher {
     //TODO: JPA kan inte läsa av dessa,det är för att de läs in som objekt
 
 
-    public String getCourses() {
-        return courses;
+    public String getCourseCode() {
+        return courseCode;
     }
 
-    public void setCourses(String courses) {
-        this.courses = courses;
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 
 

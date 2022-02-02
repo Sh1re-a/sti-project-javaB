@@ -13,10 +13,7 @@ public class CourseService {
     @Autowired
     private CourseRepo courseRepo;
 
-    public Course findByCourseCode(String courseCode){
-        Course x = courseRepo.findByCourseCode(courseCode);
-        return x;
-    }
+
 
     public List<Course> getCourses(){
         return courseRepo.findAll();
@@ -26,15 +23,15 @@ public class CourseService {
         return courseRepo.save(course);
     }
 
-    public Course updateCourse(String courseCode, Course course){
-        Course updateCourse = courseRepo.findByCourseCode(courseCode);
+  /*  public Course updateCourse(String courseCode, Course course){
+        Course updateCourse = courseRepo.findById(id).orElseThrow(null);
         updateCourse.setCourseName(course.getCourseName());
         updateCourse.setYhPoints(course.getYhPoints());
         updateCourse.setTotalHours(course.getTotalHours());
         updateCourse.setTeacher(course.getTeacher());
         return updateCourse;
     }
-
+*/
     public Course deleteCourse(String courseCode){
         Course deleteCourse = courseRepo.findByCourseCode(courseCode);
         return  deleteCourse;

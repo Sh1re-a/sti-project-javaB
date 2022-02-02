@@ -13,11 +13,6 @@ public class TestMain {
 
 
     public static void main(String[] args) {
-        TeacherController  x = new TeacherController();
-        Teacher y = new Teacher("199712062315", "Shirwac", "Abib","1881",150);
-
-       int monthly = x.teacherSalary(y);
-       System.out.println(monthly);
 
 
 

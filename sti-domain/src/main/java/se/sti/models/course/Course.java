@@ -2,10 +2,7 @@ package se.sti.models.course;
 
 import se.sti.models.teacher.Teacher;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 @Entity
 public class Course {
@@ -23,6 +20,8 @@ public class Course {
     public Course() {
 
     }
+
+
 
     public Course(int totalHours) {
         this.totalHours = totalHours;
