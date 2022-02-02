@@ -24,6 +24,7 @@ public class TeacherController {
 
     @Autowired
     private TeacherRepo teacherRepo;
+    @Autowired
     private CourseRepo courseRepo;
 
     @GetMapping(value ="/teacher/getAll")
@@ -63,34 +64,46 @@ public class TeacherController {
         teacherRepo.delete(deleteTeacher);
         return "The teacher is deleted...";
      }
-     @PostMapping(value ="/teacher/getSalary/1")
-     @ResponseBody
+
+     @RequestMapping( value ="/teacher/getSalary/{id}",method=RequestMethod.POST)
      public int teacherSalary(@PathVariable long id){
         Teacher teacher = teacherRepo.findById(id).orElseThrow(null);
-       String courseCode = teacher.getCourseCode();
-
+        long courseCode = teacher.getCourseCode();
         int teacherSalary = teacher.getHourlyRate();
-         String course = teacher.getCourseCode();
-         Course Course = courseRepo.findByCourseCode(course);
+
+         Course Course = courseRepo.findById(courseCode).orElseThrow();
          int totalHours = Course.getTotalHours();
 
          int monthlySalary = teacherSalary * totalHours;
          return monthlySalary;
      }
 
-    @GetMapping(value ="/teacher/getSalary/{id}")
-    public int teacherSalary1(@PathVariable long id){
-       Teacher teacher = teacherRepo.findById(id).orElseThrow(null);
+
+     //Försöker komma på ett sätt så man väljer hur många id parameter man ska stoppa in
+    //Får forstätta IMORN
+    //TODO Hitta ett sätt att man får välja parameter!!!!!
+    @RequestMapping( value ="/teacher/getAveregeSalary",method=RequestMethod.POST)
+        public int AveregeTeacherSalary(@RequestBody Long[] id){
+        id = new Long[id.length];
+        int monthlySalary= 0;
+        int AverageSalary = monthlySalary + 0;
+        for(int i = 0; i >= id.length; i++) {
+            Teacher teacher = teacherRepo.findById(id[i]).orElseThrow(null);
+            long courseCode = teacher.getCourseCode();
+            int teacherSalary = teacher.getHourlyRate();
+            Course Course = courseRepo.findById(courseCode).orElseThrow();
+            int totalHours = Course.getTotalHours();
+            monthlySalary = teacherSalary * totalHours;
+        }
+        int total = AverageSalary / id.length;
 
 
-        int teacherSalary = teacher.getHourlyRate();
-        String course = teacher.getCourseCode();
-        Course Course = courseRepo.findByCourseCode(course);
-        int totalHours = Course.getTotalHours();
 
-        int monthlySalary = teacherSalary  * totalHours;
-        return monthlySalary;
+        return total;
     }
+
+
+
 
 
 

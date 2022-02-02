@@ -7,6 +7,9 @@ import javax.persistence.*;
 @Entity
 public class Course {
     @Id
+    @GeneratedValue
+    private long id;
+    @Column
     private String courseCode;
     @Column
     private String courseName;
@@ -21,7 +24,13 @@ public class Course {
 
     }
 
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public Course(int totalHours) {
         this.totalHours = totalHours;

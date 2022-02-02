@@ -21,7 +21,7 @@ public class Teacher {
     @Column
     private String lastName;
     @Column
-    private String courseCode;
+    private long courseCode;
     @Column
     private int hourlyRate;
 
@@ -74,11 +74,11 @@ public class Teacher {
     //TODO: JPA kan inte läsa av dessa,det är för att de läs in som objekt
 
 
-    public String getCourseCode() {
+    public long getCourseCode() {
         return courseCode;
     }
 
-    public void setCourseCode(String courseCode) {
+    public void setCourseCode(long courseCode) {
         this.courseCode = courseCode;
     }
 

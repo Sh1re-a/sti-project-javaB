@@ -43,8 +43,8 @@ public class TeacherService{
     public int teacherSalary(long id){
        Teacher teacher = teacherRepo.findById(id).orElseThrow(null);
        int teacherSalary = teacher.getHourlyRate();
-       String course = teacher.getCourseCode();
-       Course Course = courseRepo.findByCourseCode(course);
+       Long course = teacher.getCourseCode();
+       Course Course = courseRepo.findById(id).orElseThrow(null);
        int totalHours = Course.getTotalHours();
 
        int monthlySalary = teacherSalary  * totalHours;

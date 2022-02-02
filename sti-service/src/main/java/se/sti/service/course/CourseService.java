@@ -31,9 +31,11 @@ public class CourseService {
         updateCourse.setTeacher(course.getTeacher());
         return updateCourse;
     }
-*/
+
     public Course deleteCourse(String courseCode){
         Course deleteCourse = courseRepo.findByCourseCode(courseCode);
         return  deleteCourse;
     }
+
+   */
 }
