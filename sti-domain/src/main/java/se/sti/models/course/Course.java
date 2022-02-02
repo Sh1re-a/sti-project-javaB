@@ -20,6 +20,8 @@ public class Course {
     @Transient
     private Teacher teacher;
 
+
+
     public String getCourseName() {
         return courseName;
     }

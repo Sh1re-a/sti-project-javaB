@@ -16,15 +16,9 @@ public class StudentService {
     private StudentRepo studentRepo;
 
     public Student findByPersonNumber(String personNumber){
-        Student obj = studentRepo.findByPersonNumber(personNumber);
-        return obj;
+        Student x = studentRepo.findByPersonNumber(personNumber);
+        return x;
     }
-
-
-    public String hej() {
-        return "HEJ";
-    }
-
 
 
     public List<Student> getUsers(){
