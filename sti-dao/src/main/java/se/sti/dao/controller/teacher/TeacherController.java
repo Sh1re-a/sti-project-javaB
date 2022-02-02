@@ -83,19 +83,19 @@ public class TeacherController {
     //Får forstätta IMORN
     //TODO Hitta ett sätt att man får välja parameter!!!!!
     @RequestMapping( value ="/teacher/getAveregeSalary",method=RequestMethod.POST)
-        public int AveregeTeacherSalary(@RequestBody Long[] id){
-        id = new Long[id.length];
+        public int AveregeTeacherSalary(@RequestBody List<Long> id){
+
         int monthlySalary= 0;
         int AverageSalary = monthlySalary + 0;
-        for(int i = 0; i >= id.length; i++) {
-            Teacher teacher = teacherRepo.findById(id[i]).orElseThrow(null);
+        for(int i = 0; i >= id.size(); i++) {
+            Teacher teacher = teacherRepo.findById(id.get(i)).orElseThrow(null);
             long courseCode = teacher.getCourseCode();
             int teacherSalary = teacher.getHourlyRate();
             Course Course = courseRepo.findById(courseCode).orElseThrow();
             int totalHours = Course.getTotalHours();
             monthlySalary = teacherSalary * totalHours;
         }
-        int total = AverageSalary / id.length;
+        int total = AverageSalary / id.size();
 
 
 
