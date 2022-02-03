@@ -67,7 +67,7 @@ public class TeacherController {
      }
 
      @RequestMapping( value ="/teacher/getSalary/{id}",method=RequestMethod.POST)
-     public int teacherSalary(@PathVariable long id){
+     public String teacherSalary(@PathVariable long id){
         Teacher teacher = teacherRepo.findById(id).orElseThrow(null);
         long courseCode = teacher.getCourseCode();
         int teacherSalary = teacher.getHourlyRate();
@@ -76,7 +76,11 @@ public class TeacherController {
          int totalHours = Course.getTotalHours();
 
          int monthlySalary = teacherSalary * totalHours;
-         return monthlySalary;
+
+         Integer x = new Integer(monthlySalary);
+        String monthlySalaryString = x.toString();
+
+         return monthlySalaryString + " Kr i månaden";
      }
 
 
