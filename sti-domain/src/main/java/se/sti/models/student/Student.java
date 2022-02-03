@@ -17,9 +17,8 @@ public class Student  {
     @Column
     private String lastName;
     @Column
-    private int course;
-    @Column
-    private final boolean haveComputer = true;
+    private Long courseCode;
+
 
     public long getId() {
         return id;
@@ -53,16 +52,12 @@ public class Student  {
         this.lastName = lastName;
     }
 
-    public int getCourse() {
-        return course;
+    public Long getCourseCode() {
+        return courseCode;
     }
 
-    public void setCourse(int course) {
-        this.course = course;
-    }
-
-    public boolean isHaveComputer() {
-        return haveComputer;
+    public void setCourseCode(Long courseCode) {
+        this.courseCode = courseCode;
     }
 
     @Override
@@ -72,8 +67,7 @@ public class Student  {
                 ", personNumber='" + personNumber + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", course=" + course +
-                ", haveComputer=" + haveComputer +
+                ", courseCode=" + courseCode +
                 '}';
     }
 }

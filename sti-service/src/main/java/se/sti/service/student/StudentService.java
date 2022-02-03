@@ -31,7 +31,7 @@ public class StudentService {
         Student updateStudent = studentRepo.findById(id).orElseThrow(null);
         updateStudent.setFirstName(student.getFirstName());
         updateStudent.setLastName(student.getLastName());
-        updateStudent.setCourse(student.getCourse());
+        updateStudent.setCourseCode(student.getCourseCode());
        return updateStudent;
 
     }
