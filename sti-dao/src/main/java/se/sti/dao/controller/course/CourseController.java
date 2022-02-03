@@ -20,13 +20,19 @@ public class CourseController {
         return courseRepo.findAll();
     }
 
+    @GetMapping(value = "/course/get/{id}")
+    public String getCourse(@PathVariable long id){
+        Course course = courseRepo.findById(id).orElseThrow(null);
+        return course.toString();
+    }
+
     @PostMapping(value = "/course/save")
     public String saveCourse(@RequestBody Course course){
         courseRepo.save(course);
         return "Course is saved...";
     }
 
-/*
+
     @PutMapping(value = "/course/update/{courseCode}")
     public String updateCourse(@PathVariable long id, @RequestBody Course course){
         CourseService x = new CourseService();
@@ -36,6 +42,6 @@ public class CourseController {
     }
 
 
- */
+
 }
 

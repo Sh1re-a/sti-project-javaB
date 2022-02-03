@@ -23,7 +23,7 @@ public class CourseService {
         return courseRepo.save(course);
     }
 
-  /*  public Course updateCourse(String courseCode, Course course){
+     public Course updateCourse(long id, Course course){
         Course updateCourse = courseRepo.findById(id).orElseThrow(null);
         updateCourse.setCourseName(course.getCourseName());
         updateCourse.setYhPoints(course.getYhPoints());
@@ -32,10 +32,10 @@ public class CourseService {
         return updateCourse;
     }
 
-    public Course deleteCourse(String courseCode){
-        Course deleteCourse = courseRepo.findByCourseCode(courseCode);
+    public Course deleteCourse(long id){
+        Course deleteCourse = courseRepo.findById(id).orElseThrow(null);
         return  deleteCourse;
     }
 
-   */
+
 }

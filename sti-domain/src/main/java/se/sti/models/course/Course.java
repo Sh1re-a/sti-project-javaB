@@ -76,5 +76,15 @@ public class Course {
         this.teacher = teacher;
     }
 
-
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", courseCode='" + courseCode + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", yhPoints='" + yhPoints + '\'' +
+                ", totalHours=" + totalHours +
+                ", teacher=" + teacher +
+                '}';
+    }
 }

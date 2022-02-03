@@ -25,15 +25,6 @@ public class TeacherService{
     @Autowired
     private CourseRepo courseRepo;
 
-    public Teacher findByPersonNumber(long id){
-       Teacher x = teacherRepo.findById(id).orElseThrow(null);
-        return x;
-    }
-
-    public Teacher findbyPersonNumber(long id) {
-        Teacher teacher = teacherRepo.findById(id).orElseThrow(null);
-        return teacher;
-    }
 
     //TODO Räkna ut en lärares månadslön baserat på timlön och vilka kurser han/hon har
     //TODO Räkna ut genomsnittlig lön för angivna lärare. Om samtliga lärare anges räknas samtliga
@@ -51,7 +42,7 @@ public class TeacherService{
        return monthlySalary;
     }
 
-   // public int averageSalaryAmongTeacher()
+
 
     public List<Teacher> getTeachers(){
         return teacherRepo.findAll();
