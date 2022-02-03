@@ -77,7 +77,7 @@ public class TeacherController {
 
          int monthlySalary = teacherSalary * totalHours;
 
-         Integer x = new Integer(monthlySalary);
+         Integer x = monthlySalary;
         String monthlySalaryString = x.toString();
 
          return monthlySalaryString + " Kr i månaden";
@@ -86,7 +86,7 @@ public class TeacherController {
 
 
 
-    @RequestMapping( value ="/teacher/getAverageSalary",method=RequestMethod.POST)
+    @RequestMapping( value ="/teacher/getAverageSalary/multiple-id",method=RequestMethod.POST)
         public String AverageTeacherSalary(@RequestBody List<Long> id){
 
         int averageSalary= 0;
@@ -101,7 +101,7 @@ public class TeacherController {
         }
         averageSalary= averageSalary / id.size();
 
-        Integer x = new Integer(averageSalary);
+        Integer x = averageSalary;
         String averageSalaryString = x.toString();
 
         return averageSalaryString + " Kr i månaden är den genomsnittliga lönen mellan de angivna personerna";

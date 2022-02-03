@@ -19,6 +19,16 @@ public class Student  {
     @Column
     private Long courseCode;
 
+    public Student() {
+    }
+
+    public Student(long id, String personNumber, String firstName, String lastName, Long courseCode) {
+        this.id = id;
+        this.personNumber = personNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.courseCode = courseCode;
+    }
 
     public long getId() {
         return id;

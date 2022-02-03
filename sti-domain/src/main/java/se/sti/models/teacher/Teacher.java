@@ -25,7 +25,17 @@ public class Teacher {
     @Column
     private int hourlyRate;
 
+    public Teacher() {
+    }
 
+    public Teacher(long id, String personNumber, String firstName, String lastName, long courseCode, int hourlyRate) {
+        this.id = id;
+        this.personNumber = personNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.courseCode = courseCode;
+        this.hourlyRate = hourlyRate;
+    }
 
     public long getId() {
         return id;

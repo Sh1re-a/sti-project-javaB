@@ -24,6 +24,14 @@ public class Course {
 
     }
 
+    public Course(long id, String courseCode, String courseName, String yhPoints, int totalHours) {
+        this.id = id;
+        this.courseCode = courseCode;
+        this.courseName = courseName;
+        this.yhPoints = yhPoints;
+        this.totalHours = totalHours;
+    }
+
     public long getId() {
         return id;
     }
