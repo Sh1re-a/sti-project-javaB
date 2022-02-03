@@ -2,15 +2,15 @@ package se.sti.models.student;
 
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity @Table(name = "Student")
 public class Student  {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column
     private String personNumber;
     @Column
     private String firstName;
@@ -21,6 +21,13 @@ public class Student  {
     @Column
     private final boolean haveComputer = true;
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getPersonNumber() {
         return personNumber;
@@ -57,4 +64,17 @@ public class Student  {
     public boolean isHaveComputer() {
         return haveComputer;
     }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", personNumber='" + personNumber + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", course=" + course +
+                ", haveComputer=" + haveComputer +
+                '}';
+    }
 }
+

@@ -15,10 +15,7 @@ public class StudentService {
     @Autowired
     private StudentRepo studentRepo;
 
-    public Student findByPersonNumber(String personNumber){
-        Student x = studentRepo.findByPersonNumber(personNumber);
-        return x;
-    }
+
 
 
     public List<Student> getUsers(){
@@ -30,8 +27,8 @@ public class StudentService {
         return student;
     }
 
-    public Student updateStudent(String personNumber, Student student){
-        Student updateStudent = studentRepo.findByPersonNumber(personNumber);
+    public Student updateStudent(long id, Student student){
+        Student updateStudent = studentRepo.findById(id).orElseThrow(null);
         updateStudent.setFirstName(student.getFirstName());
         updateStudent.setLastName(student.getLastName());
         updateStudent.setCourse(student.getCourse());
@@ -39,9 +36,8 @@ public class StudentService {
 
     }
 
-    public Student deleteStudent(String personNumber){
-        Student deletestudent = studentRepo.findByPersonNumber(personNumber);
-        return deletestudent;
+    public Student deleteStudent(long id){
+        return studentRepo.findById(id).orElseThrow(null);
     }
 
 

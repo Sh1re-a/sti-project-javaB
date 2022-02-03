@@ -28,6 +28,12 @@ public class StudentController {
         return studentRepo.findAll();
     }
 
+    @GetMapping(value ="/student/get/{id}")
+    public String getStudent(@PathVariable long id){
+        Student student = studentRepo.findById(id).orElseThrow(null);
+        return student.toString();
+    }
+
 
     @PostMapping(value = "/student/save")
     public String saveStudent(@RequestBody Student student){
@@ -35,16 +41,16 @@ public class StudentController {
         return "Student is saved...";
     }
     @PutMapping(value = "/student/update/{personNumber}")
-    public String updateStudent(@PathVariable String personNumber, @RequestBody Student student){
+    public String updateStudent(@PathVariable long id, @RequestBody Student student){
         StudentService x = new StudentService();
-        Student updateStudent = x.updateStudent(personNumber, student);
+        Student updateStudent = x.updateStudent(id, student);
         studentRepo.save(updateStudent);
         return "Student is updated...";
     }
     @DeleteMapping(value = "/student/delete/{personNumber}")
-    public String deleteStudent(@PathVariable String personNumber){
+    public String deleteStudent(@PathVariable long id){
         StudentService x = new StudentService();
-        Student deleteStudent = x.deleteStudent(personNumber);
+        Student deleteStudent = x.deleteStudent(id);
         studentRepo.delete(deleteStudent);
         return "Student is deleted...";
     }

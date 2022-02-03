@@ -15,6 +15,7 @@ import se.sti.models.repo.TeacherRepo;
 import se.sti.models.teacher.Teacher;
 import se.sti.service.teacher.TeacherService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -79,23 +80,26 @@ public class TeacherController {
      }
 
 
-     //Försöker komma på ett sätt så man väljer hur många id parameter man ska stoppa in
-    //Får forstätta IMORN
+
     //TODO Hitta ett sätt att man får välja parameter!!!!!
-    @RequestMapping( value ="/teacher/getAveregeSalary",method=RequestMethod.POST)
-        public int AveregeTeacherSalary(@RequestBody List<Long> id){
+    @RequestMapping( value ="/teacher/getAverageSalary",method=RequestMethod.POST)
+        public int AverageTeacherSalary(@RequestBody long id, @RequestBody long id2){
+
+        List<Long> listWithId = new ArrayList<>();
+        listWithId.add(id);
+        listWithId.add(id2);
 
         int monthlySalary= 0;
         int AverageSalary = monthlySalary + 0;
-        for(int i = 0; i >= id.size(); i++) {
-            Teacher teacher = teacherRepo.findById(id.get(i)).orElseThrow(null);
+        for(int i = 0; i >= listWithId.size(); i++) {
+            Teacher teacher = teacherRepo.findById(listWithId.get(i)).orElseThrow(null);
             long courseCode = teacher.getCourseCode();
             int teacherSalary = teacher.getHourlyRate();
             Course Course = courseRepo.findById(courseCode).orElseThrow();
             int totalHours = Course.getTotalHours();
             monthlySalary = teacherSalary * totalHours;
         }
-        int total = AverageSalary / id.size();
+        int total = AverageSalary / listWithId.size();
 
 
 
