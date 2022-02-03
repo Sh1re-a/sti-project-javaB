@@ -1,0 +1,10 @@
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (1, 'Benjamin', 'Pogosian', 189, '0345868935', 5);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (2, 'Ulrick', 'Wrought', 190, '6839431517', 4);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (3, 'George', 'Zanicchi', 121, '5077309027', 5);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (4, 'Standford', 'D''Abbot-Doyle', 185, '2405496216', 2);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (5, 'Manolo', 'Cottel', 130, '0308465962', 1);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (6, 'Trudy', 'Clery', 122, '2238953957', 5);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (7, 'Hayward', 'Berns', 130, '1362049948', 1);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (8, 'August', 'Idenden', 144, '9800039082', 5);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (9, 'Stanwood', 'Mallabar', 177, '1559869593', 3);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (10, 'Osbourn', 'Peppard', 184, '6933907309', 3);

@@ -1,0 +1,10 @@
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (1, 'Chalmers', 'Beecraft', 5, '2302823176');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (2, 'Denny', 'Fawdery', 5, '7784016468');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (3, 'Ruggiero', 'Hubber', 1, '5599739430');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (4, 'Kurtis', 'Franses', 5, '5271588033');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (5, 'Franny', 'Jerromes', 4, '4970250839');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (6, 'Bevan', 'Rappport', 2, '6613938122');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (7, 'Sargent', 'Mawby', 1, '3907051270');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (8, 'Ev', 'Gladyer', 3, '7746836909');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (9, 'Jaymie', 'Crumley', 3, '2629518574');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (10, 'Mabelle', 'Tarrier', 2, '6030189557');

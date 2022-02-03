@@ -1,0 +1,34 @@
+
+Copy Paste allt nedan i terminalen, efter du har gjort "use STI;"
+
+insert into course (id, course_Code, course_Name, yh_Points, total_Hours) values (1, 2999, 'Java', 50, 90);
+insert into course (id, course_Code, course_Name, yh_Points, total_Hours) values (2, 2526, 'SQL', 50, 40);
+insert into course (id, course_Code, course_Name, yh_Points, total_Hours) values (3, 2657, 'CSS', 40, 60);
+insert into course (id, course_Code, course_Name, yh_Points, total_Hours) values (4, 1707, 'HTML', 25, 40);
+insert into course (id, course_Code, course_Name, yh_Points, total_Hours) values (5, 1352, 'JavaScript', 25, 90);
+
+
+
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (1, 'Benjamin', 'Pogosian', 189, '0345868935', 5);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (2, 'Ulrick', 'Wrought', 190, '6839431517', 4);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (3, 'George', 'Zanicchi', 121, '5077309027', 5);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (4, 'Standford', 'D''Abbot-Doyle', 185, '2405496216', 2);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (5, 'Manolo', 'Cottel', 130, '0308465962', 1);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (6, 'Trudy', 'Clery', 122, '2238953957', 5);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (7, 'Hayward', 'Berns', 130, '1362049948', 1);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (8, 'August', 'Idenden', 144, '9800039082', 5);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (9, 'Stanwood', 'Mallabar', 177, '1559869593', 3);
+insert into teacher (id, first_Name, last_Name, hourly_Rate, person_Number, course_Code) values (10, 'Osbourn', 'Peppard', 184, '6933907309', 3);
+
+
+
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (1, 'Chalmers', 'Beecraft', 5, '2302823176');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (2, 'Denny', 'Fawdery', 5, '7784016468');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (3, 'Ruggiero', 'Hubber', 1, '5599739430');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (4, 'Kurtis', 'Franses', 5, '5271588033');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (5, 'Franny', 'Jerromes', 4, '4970250839');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (6, 'Bevan', 'Rappport', 2, '6613938122');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (7, 'Sargent', 'Mawby', 1, '3907051270');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (8, 'Ev', 'Gladyer', 3, '7746836909');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (9, 'Jaymie', 'Crumley', 3, '2629518574');
+insert into student (id, first_Name, last_Name, course_Code, person_Number) values (10, 'Mabelle', 'Tarrier', 2, '6030189557');
