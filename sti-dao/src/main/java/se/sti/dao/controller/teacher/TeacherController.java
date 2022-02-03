@@ -81,29 +81,26 @@ public class TeacherController {
 
 
 
-    //TODO Hitta ett sätt att man får välja parameter!!!!!
+
     @RequestMapping( value ="/teacher/getAverageSalary",method=RequestMethod.POST)
-        public int AverageTeacherSalary(@RequestBody long id, @RequestBody long id2){
+        public String AverageTeacherSalary(@RequestBody List<Long> id){
 
-        List<Long> listWithId = new ArrayList<>();
-        listWithId.add(id);
-        listWithId.add(id2);
+        int averageSalary= 0;
 
-        int monthlySalary= 0;
-        int AverageSalary = monthlySalary + 0;
-        for(int i = 0; i >= listWithId.size(); i++) {
-            Teacher teacher = teacherRepo.findById(listWithId.get(i)).orElseThrow(null);
+        for(int i = 0; i < id.size(); i++) {
+            Teacher teacher = teacherRepo.findById(id.get(i)).orElseThrow(null);
             long courseCode = teacher.getCourseCode();
             int teacherSalary = teacher.getHourlyRate();
             Course Course = courseRepo.findById(courseCode).orElseThrow();
             int totalHours = Course.getTotalHours();
-            monthlySalary = teacherSalary * totalHours;
+            averageSalary = averageSalary + (teacherSalary * totalHours);
         }
-        int total = AverageSalary / listWithId.size();
+        averageSalary= averageSalary / id.size();
 
+        Integer x = new Integer(averageSalary);
+        String averageSalaryString = x.toString();
 
-
-        return total;
+        return averageSalaryString + " Kr i månaden är den genomsnittliga lönen mellan de angivna personerna";
     }
 
 
