@@ -17,7 +17,6 @@ public class TeacherServiceTest {
         Long course = teacher.getCourseCode();
         Course Course = new Course(1, "1889", "Java", "90", 60);
         int totalHours = Course.getTotalHours();
-
         int monthlySalary = teacherSalary * totalHours;
     }
 
@@ -29,7 +28,6 @@ public class TeacherServiceTest {
         teacher.setHourlyRate(190);
         teacher.setCourseCode(3L);
         teacher.setPersonNumber("19971206");
-
     }
     @Test
     public void shouldGetAverageSalary() {

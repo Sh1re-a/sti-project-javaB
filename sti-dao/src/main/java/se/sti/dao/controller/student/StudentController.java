@@ -40,14 +40,14 @@ public class StudentController {
         studentRepo.save(student);
         return "Student is saved...";
     }
-    @PutMapping(value = "/student/update/{personNumber}")
+    @PutMapping(value = "/student/update/{id}")
     public String updateStudent(@PathVariable long id, @RequestBody Student student){
         StudentService x = new StudentService();
         Student updateStudent = x.updateStudent(id, student);
         studentRepo.save(updateStudent);
         return "Student is updated...";
     }
-    @DeleteMapping(value = "/student/delete/{personNumber}")
+    @DeleteMapping(value = "/student/delete/{id}")
     public String deleteStudent(@PathVariable long id){
         StudentService x = new StudentService();
         Student deleteStudent = x.deleteStudent(id);

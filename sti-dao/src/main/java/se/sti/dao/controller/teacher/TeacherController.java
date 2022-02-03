@@ -50,7 +50,7 @@ public class TeacherController {
         return"The teacher is saved...";
     }
 
-    @PutMapping(value = "/teacher/update/{personNumber}")
+    @PutMapping(value = "/teacher/update/{id}")
     public String updateTeacher(@PathVariable long id, @RequestBody Teacher teacher){
          TeacherService x = new TeacherService();
          Teacher updateTeacher = x.updateTeacher(id, teacher);
@@ -58,7 +58,7 @@ public class TeacherController {
          return "The teacher is updated...";
      }
 
-     @DeleteMapping(value = "/teacher/delete/{personNumber}")
+     @DeleteMapping(value = "/teacher/delete/{id}")
      public String deleteTeacher(@PathVariable long id){
         TeacherService x = new TeacherService();
         Teacher deleteTeacher = x.deleteStudent(id);
